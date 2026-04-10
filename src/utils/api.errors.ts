@@ -1,5 +1,4 @@
 import { StatusCodes } from "http-status-codes";
-import { stat } from "node:fs";
 
 export default class ApiError extends Error {
   status: string;

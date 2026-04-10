@@ -29,26 +29,6 @@ A TypeScript + Express API that classifies a name using the public Genderize API
 - Pino + pino-http (logging)
 - CORS
 
-## Project Structure
-
-```text
-src/
-  app.ts
-  controllers/
-    genderize.controllers.ts
-  routes/
-    genderize.routes.ts
-  services/
-    genderize.services.ts
-  middlewares/
-    errors.handlers.ts
-  utils/
-    api.errors.ts
-    logger.ts
-    responses.ts
-    validate-request.ts
-```
-
 ## Prerequisites
 
 - Node.js 18+ (recommended)
@@ -66,7 +46,6 @@ npm install
 
 ```env
 PORT=3000
-LOG_LEVEL=info
 ```
 
 If PORT is not set, the server defaults to 3000.
