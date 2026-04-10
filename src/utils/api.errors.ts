@@ -33,6 +33,12 @@ export class InternalServerError extends ApiError {
   }
 }
 
+export class BadGatewayError extends ApiError {
+  constructor(message: string = "Bad Gateway") {
+    super(message, StatusCodes.BAD_GATEWAY);
+  }
+}
+
 export class ValidationError extends ApiError {
   constructor(message: string = "Validation Error") {
     super(message, StatusCodes.UNPROCESSABLE_ENTITY);

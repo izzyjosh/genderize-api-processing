@@ -18,7 +18,7 @@ export const validateRequest =
 
     const trimmedValue = queryValue.trim();
     if (!trimmedValue) {
-      throw new ValidationError("Missing or empty name parameter");
+      throw new BadRequestError("Missing or empty name parameter");
     }
 
     if (NUMERIC_PATTERN.test(trimmedValue)) {

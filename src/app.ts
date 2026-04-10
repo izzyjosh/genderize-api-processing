@@ -6,6 +6,8 @@ import {
   RequestErrorHandler,
 } from "./middlewares/errors.handlers";
 import { StatusCodes } from "http-status-codes";
+import genderizeRouter from "./routes/genderize.routes";
+import cors from "cors";
 
 dotenv.config();
 
@@ -13,8 +15,15 @@ const port = process.env.PORT || 3000;
 
 const app = express();
 
+app.use(
+  cors({
+    origin: "*",
+  }),
+);
+
 app.use(httpLogger);
 
+app.use("/api/", genderizeRouter);
 app.get("/", (req, res) => {
   const response = {
     status: "success",
