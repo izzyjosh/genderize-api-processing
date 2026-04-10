@@ -55,6 +55,11 @@ class GenderizeService {
       }
 
       const is_confident = data.probability >= 0.7 && data.count >= 100;
+      if (!is_confident) {
+        throw new BadGatewayError(
+          "Prediction is not confident enough based on probability and sample size",
+        );
+      }
       const processed_at = new Date().toISOString();
 
       const transform: ClassifiedGenderResult = {
